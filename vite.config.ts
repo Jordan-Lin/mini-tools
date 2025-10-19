@@ -3,9 +3,17 @@ import solid from 'vite-plugin-solid'
 
 export default defineConfig({
   plugins: [solid()],
-  base: '/mini-tools/', // Change this to your GitHub repository name
+  base: '/', // Use absolute root path for GitHub Pages
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        format: 'es'
+      }
+    }
   },
+  server: {
+    port: 3000
+  }
 })
